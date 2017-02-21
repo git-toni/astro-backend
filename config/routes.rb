@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :telescopes
+  resources :posts
   get 'users/index'
   get 'dummy' => 'auth#dummy'
   post 'login' => 'sessions#create'
