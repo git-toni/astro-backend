@@ -1,6 +1,8 @@
 require 'jwt'
 
 module AuthHelper
+  include ReqHelper
+
   def require_auth
     @errors = ['Access Denied']
     unless authenticate_token
@@ -12,6 +14,9 @@ module AuthHelper
     @current_user ||= authenticate_token
   end
 
+  def user_authorization
+    current_user.id.to_s == user_id.to_s ? 'Self' : 'External'
+  end
   private
 
   def authenticate_token

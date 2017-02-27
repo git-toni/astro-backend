@@ -5,11 +5,12 @@ require 'helpers/general_helper'
 
 class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
+  #ActiveRecord::FixtureSet.context_class.send :include, GeneralHelper
+  #fixtures :all
   include GeneralHelper
-  ActiveRecord::FixtureSet.context_class.send :include, GeneralHelper
 
-
-
-  fixtures :all
+  #Rake::Task['db:setup'].invoke
+  require 'seed_test.rb'
   $redis.flushdb if Rails.env == 'test'
 end
+

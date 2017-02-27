@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class AuthControllerTest < ActionDispatch::IntegrationTest
-  @@jwt = JwtFactory.create(User.first)
-  @@expjwt = JwtFactory.create(User.first,2.hours.ago.to_i) #expired jwt
+  u = User.first
+  @@jwt = JwtFactory.create(u)
+  @@expjwt = JwtFactory.create(u,2.hours.ago.to_i) #expired jwt
   test "should get dummy response" do
     #get dummy_path
     get_auth dummy_path, @@jwt

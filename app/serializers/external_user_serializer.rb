@@ -1,0 +1,2 @@
+class ExternalUserSerializer < UserSerializer
+end
