@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220172636) do
+ActiveRecord::Schema.define(version: 20170228112814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorite_posts", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "post_id"], name: "index_favorite_posts_on_user_id_and_post_id", unique: true, using: :btree
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "image_url"

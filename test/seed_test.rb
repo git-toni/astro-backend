@@ -1,4 +1,4 @@
-[User, Post, Telescope].each{|m| m.delete_all}
+[User, Post, Telescope, FavoritePost].each{|m| m.delete_all}
 
 4.times do
   FactoryGirl.create(:user) 

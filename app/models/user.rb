@@ -5,6 +5,8 @@ class User < ApplicationRecord
   before_validation(on: :create) do
     generate_token(:auth_token)
   end
+  has_many :favorite_posts
+  has_many :favorited_posts, through: :favorite_posts, source: :post
 
 
   private

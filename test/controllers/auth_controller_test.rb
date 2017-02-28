@@ -19,6 +19,7 @@ class AuthControllerTest < ActionDispatch::IntegrationTest
     #res = HashWithIndifferentAccess.new JSON.parse(@response.body)
     res = JSON.parse(@response.body)
     assert_response :unauthorized
-    assert res.include?'Expired Token'
+    assert res.include? 'msg'
+    assert res['msg'].include?'Expired Token'
   end
 end

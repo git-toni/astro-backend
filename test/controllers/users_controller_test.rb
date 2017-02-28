@@ -20,4 +20,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not res.include? 'email'
     assert_not_equal res['name'], u.name
   end
+  test "access OWN settings correctly" do
+    get_auth user_settings_url(u), @@jwt
+    assert_response :success
+    res = JSON.parse(@response.body)
+    assert res.include? 'display_preferences'
+    assert res.include? 'notification_preferences'
+  end
+  test "accessing OTHERS' settings unauthorized" do
+    get_auth user_settings_url(u2), @@jwt
+    assert_response :unauthorized
+    res = JSON.parse(@response.body)
+    assert res.include? 'msg'
+    assert_equal res['msg'], "Can't access other's settings"
+  end
 end
