@@ -29,7 +29,8 @@ module AuthHelper
       return nil
     end
     begin
-      @current_user = User.find(auth_token[:user_id])
+      #@current_user = User.find(auth_token[:user_id])
+      @current_user = User.find(auth_token[:user][:id])
     rescue JWT::VerificationError, JWT::DecodeError
       @errors.push('User not found')
       return nil
@@ -57,6 +58,8 @@ module AuthHelper
   end
 
   def user_id_in_token?
-    http_token && auth_token && auth_token[:user_id].to_i
+    #binding.pry
+    #http_token && auth_token && !!auth_token[:user_id]
+    http_token && auth_token && !!auth_token[:user][:id]
   end
 end

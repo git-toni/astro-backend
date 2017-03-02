@@ -1,3 +1,4 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :image_url, :description, :telescope_id
+  attributes  :image_url, :description
+  belongs_to :telescope, serializer: TelescopeSerializer
 end
