@@ -4,6 +4,7 @@ module AuthHelper
   include ReqHelper
 
   def require_auth
+    #binding.pry
     @errors = ['Access Denied']
     unless authenticate_token
       render_feedback(@errors, :unauthorized)
