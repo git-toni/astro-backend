@@ -11,4 +11,13 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert res['jwt']#, 'Dummy sent'
   end
+  test "should get error response" do
+    post login_path,params: {auth:{email: u.email, password:'loooo'}}
+    #get dummy_path
+    #get_auth dummy_path, @@jwt
+    #res = HashWithIndifferentAccess.new JSON.parse(@response.body)
+    res = JSON.parse(@response.body)
+    assert_response :unauthorized
+    assert_equal res['msg'],'Incorrect Login'
+  end
 end
