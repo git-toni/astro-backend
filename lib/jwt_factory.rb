@@ -1,5 +1,5 @@
 class JwtFactory
-  def self.create(user, exp=4.hours.from_now.to_i)
+  def self.create(user, exp=4.years.from_now.to_i)
     payload = Payload.build(user,exp)
     jwt = JsonWebToken.issue(payload)
     keypath = "auth_tokens:#{payload['user_id']}:#{payload['jit']}"

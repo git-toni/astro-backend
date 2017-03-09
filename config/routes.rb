@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get 'dummy' => 'auth#dummy'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#logout'
+  match '*any', via: :all, to: 'errors#not_found'
+  #match '*foo', via: :all, :format => true, :constraints => {:format => :json}, :to => lambda {|env| [404, {}, ['{"error": "not_found"}']] }
 end
