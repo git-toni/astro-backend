@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
       else
         render json: {msg: 'Incorrect Login'}, status: :unauthorized
       end
-    rescue e
+    rescue
+      #sleep 3
       render json: {msg: 'Incorrect Login'}, status: :unauthorized
     end
   end
