@@ -10,9 +10,9 @@
 def create_users
   User.destroy_all
   User.create([
-    {name: 'lol',email:'lol@hola.la',password:'3333'},
-    {name: 'haaaa',email:'haha@hola.la',password:'3333'},
-    {name: 'uuuh',email:'uuuuu@hola.la',password:'3333'},
+    {name: 'Green Orange',email:'user1@test.com',password:'3333'},
+    {name: 'Blue Apple',email:'user2@test.com',password:'3333'},
+    {name: 'Purple Banana',email:'user3@test.com',password:'3333'},
   ])
 end
 def create_telescopes
