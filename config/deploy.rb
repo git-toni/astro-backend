@@ -67,6 +67,11 @@ namespace :deploy do
     on roles(:app) do
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
+      within "#{current_path}" do
+        with rails_env: "#{fetch(:stage)}" do
+          execute :rake, "db:create"
+        end
+      end
     end
   end
 

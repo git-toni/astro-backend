@@ -81,8 +81,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#production:
-#  <<: *default
-#  database: basic_auth_production
-#  username: basic_auth
-#  password: <%= ENV['BASIC_AUTH_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: <%= ENV['DB_DBNAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
