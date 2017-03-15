@@ -1,3 +1,7 @@
+require 'dotenv'
+Dotenv.load(File.expand_path("../../.env.production",__FILE__))
+
+#puts "HELLLLLLLLLLLL #{ENV['DB_USERNAME']}"
 
 # config valid only for current version of Capistrano
 lock "3.8.0"
@@ -35,8 +39,9 @@ set :puma_init_active_record, false  # Change to true if using ActiveRecord
 # set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{ .env.production }
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -62,16 +67,58 @@ namespace :deploy do
     end
   end
 
+  desc 'Import ENV'
+  task :import_env do
+    on roles(:app) do
+      upload! File.expand_path("../../.env.production",__FILE__), "#{shared_path}/.env.production"
+      #execute 'ls -a /home/deploy/apps/astro/shared'
+      #execute "ln -nfs #{shared_path}/.env.production #{current_path}/.env.production"
+    end
+  end
+
+  desc 'prepare database'
+  task :prepare_db do
+    on roles(:app) do
+      #execute :ls, '-a'
+      #execute "source #{shared_path}/.env.production; echo $DB_USERNAME"
+      #execute 'pwd'
+      #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
+      #execute "whoami"
+      #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
+      #execute "sudo -u postgres bash -c \"psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\"\""
+      #as :root do
+      #  execute "whoami"
+      #  #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
+      #  #execute "sudo -u postgres bash -c \"psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\"\""
+      #end
+      #execute "echo $DB_USERNAME"
+      #execute :source, '.env.production'
+      #execute 'source .env.production'
+      #execute capture(Dir[shared_path])
+      #execute :echo, '$DB_DBNAME'
+
+    end
+  end
+
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
+      invoke "deploy:import_env"
+      invoke "deploy:prepare_db"
+      #puts "RELEASEPATH IS #{release_path}"
+      #execute(Dir['/home/*'])
+      #within "#{current_path}" do
+      #within release_path do
+      #  with rails_env: fetch(:rails_env) do
+      #    execute :pwd
+      #  end
+      #  #  with rails_env: "#{fetch(:stage)}" do
+      #  #    execute :rake, "db:create"
+      #  #  end
+      #end
+
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
-      within "#{current_path}" do
-        with rails_env: "#{fetch(:stage)}" do
-          execute :rake, "db:create"
-        end
-      end
     end
   end
 
@@ -83,7 +130,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after  :finishing,    :compile_assets
+  #after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end

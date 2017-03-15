@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action(except:[:index]) { retrieve_resource('User', user_id) }
   before_action :self_access, only:[:settings]
+  skip_before_action :require_auth, only:[:index]
   def index
     #binding.pry
     render json: User.all, each_serializer: 'ExternalUserSerializer'.constantize, status: :ok
