@@ -117,6 +117,7 @@ namespace :deploy do
       #  #  end
       #end
 
+      execute 'cd /home/deploy/redis; redis-server'
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
     end
@@ -125,6 +126,8 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
+      execute 'killall redis-server'
+      execute 'cd /home/deploy/redis; redis-server'
       invoke 'puma:restart'
     end
   end
