@@ -1,9 +1,7 @@
 require 'dotenv'
 Dotenv.load(File.expand_path("../../.env.production",__FILE__))
 
-#puts "HELLLLLLLLLLLL #{ENV['DB_USERNAME']}"
 
-# config valid only for current version of Capistrano
 lock "3.8.0"
 
 
@@ -14,7 +12,7 @@ set :application,     'astro'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-# Don't change these unless you know what you're doing
+
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
@@ -71,32 +69,13 @@ namespace :deploy do
   task :import_env do
     on roles(:app) do
       upload! File.expand_path("../../.env.production",__FILE__), "#{shared_path}/.env.production"
-      #execute 'ls -a /home/deploy/apps/astro/shared'
-      #execute "ln -nfs #{shared_path}/.env.production #{current_path}/.env.production"
     end
   end
 
   desc 'prepare database'
   task :prepare_db do
     on roles(:app) do
-      #execute :ls, '-a'
-      #execute "source #{shared_path}/.env.production; echo $DB_USERNAME"
-      #execute 'pwd'
       #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
-      #execute "whoami"
-      #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
-      #execute "sudo -u postgres bash -c \"psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\"\""
-      #as :root do
-      #  execute "whoami"
-      #  #execute "psql -U postgres -d database_name -c 'create user #{ENV['DB_USERNAME']} with password #{ENV['DB_PASSWORD']};'"
-      #  #execute "sudo -u postgres bash -c \"psql -c \"CREATE USER vagrant WITH PASSWORD 'vagrant';\"\""
-      #end
-      #execute "echo $DB_USERNAME"
-      #execute :source, '.env.production'
-      #execute 'source .env.production'
-      #execute capture(Dir[shared_path])
-      #execute :echo, '$DB_DBNAME'
-
     end
   end
 
@@ -105,19 +84,8 @@ namespace :deploy do
     on roles(:app) do
       invoke "deploy:import_env"
       invoke "deploy:prepare_db"
-      #puts "RELEASEPATH IS #{release_path}"
-      #execute(Dir['/home/*'])
-      #within "#{current_path}" do
-      #within release_path do
-      #  with rails_env: fetch(:rails_env) do
-      #    execute :pwd
-      #  end
-      #  #  with rails_env: "#{fetch(:stage)}" do
-      #  #    execute :rake, "db:create"
-      #  #  end
-      #end
 
-      execute 'cd /home/deploy/redis; redis-server'
+      invoke 'deploy:redis_restart'
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
     end
@@ -139,11 +107,6 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'deploy:redis_restart'
-      #execute 'killall redis-server || true'
-      #with rails_env: fetch(:rails_env) do
-      #  execute "nohup redis-server & sleep 5 && echo", pty: false
-      #end
-      ##execute 'redis-server'
       ##invoke 'puma:restart'
     end
   end

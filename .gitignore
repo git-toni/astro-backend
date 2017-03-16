@@ -19,3 +19,4 @@
 .git
 /retrieval
 .env*
+*.rdb
