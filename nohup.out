@@ -1,0 +1,259 @@
+21533:C 15 Mar 23:20:04.181 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+21533:M 15 Mar 23:20:04.184 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+21533:M 15 Mar 23:20:04.184 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+21533:M 15 Mar 23:20:04.184 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 21533
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+21533:M 15 Mar 23:20:04.186 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+21533:M 15 Mar 23:20:04.187 # Server started, Redis version 3.2.8
+21533:M 15 Mar 23:20:04.187 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+21533:M 15 Mar 23:20:04.187 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+21533:M 15 Mar 23:20:04.187 * DB loaded from disk: 0.000 seconds
+21533:M 15 Mar 23:20:04.187 * The server is now ready to accept connections on port 6379
+21533:signal-handler (1489616405) Received SIGINT scheduling shutdown...
+21533:M 15 Mar 23:20:05.694 # User requested shutdown...
+21533:M 15 Mar 23:20:05.694 * Saving the final RDB snapshot before exiting.
+21533:M 15 Mar 23:20:05.700 * DB saved on disk
+21533:M 15 Mar 23:20:05.700 # Redis is now ready to exit, bye bye...
+21557:C 15 Mar 23:20:30.101 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+21557:M 15 Mar 23:20:30.104 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+21557:M 15 Mar 23:20:30.104 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+21557:M 15 Mar 23:20:30.104 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 21557
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+21557:M 15 Mar 23:20:30.106 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+21557:M 15 Mar 23:20:30.106 # Server started, Redis version 3.2.8
+21557:M 15 Mar 23:20:30.106 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+21557:M 15 Mar 23:20:30.106 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+21557:M 15 Mar 23:20:30.107 * DB loaded from disk: 0.000 seconds
+21557:M 15 Mar 23:20:30.107 * The server is now ready to accept connections on port 6379
+21557:signal-handler (1489616444) Received SIGTERM scheduling shutdown...
+21557:M 15 Mar 23:20:44.465 # User requested shutdown...
+21557:M 15 Mar 23:20:44.465 * Saving the final RDB snapshot before exiting.
+21557:M 15 Mar 23:20:44.470 * DB saved on disk
+21557:M 15 Mar 23:20:44.471 # Redis is now ready to exit, bye bye...
+21618:C 15 Mar 23:21:32.753 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+21618:M 15 Mar 23:21:32.756 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+21618:M 15 Mar 23:21:32.756 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+21618:M 15 Mar 23:21:32.756 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 21618
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+21618:M 15 Mar 23:21:32.758 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+21618:M 15 Mar 23:21:32.758 # Server started, Redis version 3.2.8
+21618:M 15 Mar 23:21:32.758 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+21618:M 15 Mar 23:21:32.758 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+21618:M 15 Mar 23:21:32.758 * DB loaded from disk: 0.000 seconds
+21618:M 15 Mar 23:21:32.758 * The server is now ready to accept connections on port 6379
+21618:signal-handler (1489616494) Received SIGINT scheduling shutdown...
+21618:M 15 Mar 23:21:34.063 # User requested shutdown...
+21618:M 15 Mar 23:21:34.063 * Saving the final RDB snapshot before exiting.
+21618:M 15 Mar 23:21:34.068 * DB saved on disk
+21618:M 15 Mar 23:21:34.068 # Redis is now ready to exit, bye bye...
+21643:C 15 Mar 23:21:48.241 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+21643:M 15 Mar 23:21:48.244 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+21643:M 15 Mar 23:21:48.244 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+21643:M 15 Mar 23:21:48.244 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 21643
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+21643:M 15 Mar 23:21:48.246 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+21643:M 15 Mar 23:21:48.246 # Server started, Redis version 3.2.8
+21643:M 15 Mar 23:21:48.246 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+21643:M 15 Mar 23:21:48.246 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+21643:M 15 Mar 23:21:48.247 * DB loaded from disk: 0.000 seconds
+21643:M 15 Mar 23:21:48.247 * The server is now ready to accept connections on port 6379
+21643:signal-handler (1489616531) Received SIGTERM scheduling shutdown...
+21643:M 15 Mar 23:22:12.042 # User requested shutdown...
+21643:M 15 Mar 23:22:12.043 * Saving the final RDB snapshot before exiting.
+21643:M 15 Mar 23:22:12.047 * DB saved on disk
+21643:M 15 Mar 23:22:12.047 # Redis is now ready to exit, bye bye...
+21882:C 15 Mar 23:23:01.191 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+21882:M 15 Mar 23:23:01.193 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+21882:M 15 Mar 23:23:01.193 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+21882:M 15 Mar 23:23:01.193 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 21882
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+21882:M 15 Mar 23:23:01.195 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+21882:M 15 Mar 23:23:01.195 # Server started, Redis version 3.2.8
+21882:M 15 Mar 23:23:01.196 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+21882:M 15 Mar 23:23:01.196 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+21882:M 15 Mar 23:23:01.196 * DB loaded from disk: 0.000 seconds
+21882:M 15 Mar 23:23:01.196 * The server is now ready to accept connections on port 6379
+21882:signal-handler (1489616586) Received SIGTERM scheduling shutdown...
+21882:M 15 Mar 23:23:06.416 # User requested shutdown...
+21882:M 15 Mar 23:23:06.416 * Saving the final RDB snapshot before exiting.
+21882:M 15 Mar 23:23:06.419 * DB saved on disk
+21882:M 15 Mar 23:23:06.420 # Redis is now ready to exit, bye bye...
+26014:C 16 Mar 10:44:52.681 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26014:M 16 Mar 10:44:52.683 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+26014:M 16 Mar 10:44:52.683 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+26014:M 16 Mar 10:44:52.683 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 26014
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+26014:M 16 Mar 10:44:52.686 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+26014:M 16 Mar 10:44:52.686 # Server started, Redis version 3.2.8
+26014:M 16 Mar 10:44:52.686 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+26014:M 16 Mar 10:44:52.686 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+26014:M 16 Mar 10:44:52.686 * DB loaded from disk: 0.000 seconds
+26014:M 16 Mar 10:44:52.686 * The server is now ready to accept connections on port 6379
+26014:signal-handler (1489657500) Received SIGINT scheduling shutdown...
+26014:M 16 Mar 10:45:00.214 # User requested shutdown...
+26014:M 16 Mar 10:45:00.214 * Saving the final RDB snapshot before exiting.
+26014:M 16 Mar 10:45:00.219 * DB saved on disk
+26014:M 16 Mar 10:45:00.219 # Redis is now ready to exit, bye bye...
+26031:C 16 Mar 10:45:11.507 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26031:M 16 Mar 10:45:11.509 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+26031:M 16 Mar 10:45:11.509 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+26031:M 16 Mar 10:45:11.509 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 26031
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+26031:M 16 Mar 10:45:11.510 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+26031:M 16 Mar 10:45:11.510 # Server started, Redis version 3.2.8
+26031:M 16 Mar 10:45:11.510 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+26031:M 16 Mar 10:45:11.510 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+26031:M 16 Mar 10:45:11.510 * DB loaded from disk: 0.000 seconds
+26031:M 16 Mar 10:45:11.510 * The server is now ready to accept connections on port 6379
+26031:signal-handler (1489657514) Received SIGINT scheduling shutdown...
+26031:M 16 Mar 10:45:14.621 # User requested shutdown...
+26031:M 16 Mar 10:45:14.621 * Saving the final RDB snapshot before exiting.
+26031:M 16 Mar 10:45:14.627 * DB saved on disk
+26031:M 16 Mar 10:45:14.627 # Redis is now ready to exit, bye bye...
+26038:C 16 Mar 10:45:18.038 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26038:M 16 Mar 10:45:18.038 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+26038:M 16 Mar 10:45:18.038 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+26038:M 16 Mar 10:45:18.038 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 26038
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+26038:M 16 Mar 10:45:18.039 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+26038:M 16 Mar 10:45:18.039 # Server started, Redis version 3.2.8
+26038:M 16 Mar 10:45:18.039 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+26038:M 16 Mar 10:45:18.039 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+26038:M 16 Mar 10:45:18.039 * DB loaded from disk: 0.000 seconds
+26038:M 16 Mar 10:45:18.039 * The server is now ready to accept connections on port 6379

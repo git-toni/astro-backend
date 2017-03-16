@@ -123,12 +123,28 @@ namespace :deploy do
     end
   end
 
+
+  desc 'Restart Redis'
+  task :redis_restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      with rails_env: fetch(:rails_env) do
+        execute 'killall redis-server || true'
+        execute "nohup redis-server & sleep 5 && echo", pty: false
+      end
+    end
+  end
+
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute 'killall redis-server'
-      execute 'cd /home/deploy/redis; redis-server'
-      invoke 'puma:restart'
+      invoke 'deploy:redis_restart'
+      #execute 'killall redis-server || true'
+      #with rails_env: fetch(:rails_env) do
+      #  execute "nohup redis-server & sleep 5 && echo", pty: false
+      #end
+      ##execute 'redis-server'
+      ##invoke 'puma:restart'
     end
   end
 
