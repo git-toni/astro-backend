@@ -1,5 +1,3 @@
-require 'pry'
-require_relative 'deploy/helpers.rb'
 require 'dotenv'
 Dotenv.load(File.expand_path("../../.env.production",__FILE__))
 
@@ -8,8 +6,7 @@ lock "3.8.0"
 
 
 #server '45.32.152.42', port: 22, roles: [:web, :app, :db], primary: true
-#server '45.76.94.69', port: 22, roles: [:web, :app, :db], primary: true
-server 'spaceview.tk', port: 22, roles: [:web, :app, :db], primary: true
+server '45.76.94.69', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/git-toni/astro-backend'
 set :application,     'astro'
@@ -32,10 +29,6 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user)}
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, false  # Change to true if using ActiveRecord
-
-set :ssl_on, false
-set :ssl_email, ENV['SSL_EMAIL']
-set :app_domains, ['spaceview.tk','www.spaceview.tk']
 
 ## Defaults:
 # set :scm,           :git
@@ -102,8 +95,6 @@ namespace :deploy do
       invoke "deploy:make_folders"
       invoke "deploy:import_env"
       invoke "deploy:prepare_db"
-      invoke "deploy:prepare_letsencrypt"
-      invoke "deploy:prepare_nginx"
 
       invoke 'deploy:redis_restart'
       before 'deploy:restart', 'puma:start'
@@ -131,49 +122,9 @@ namespace :deploy do
     end
   end
 
-  desc 'Copy and link nginx.conf'
-  task :prepare_nginx do
-    on roles(:app) do
-      h = smart_template 'nginx.conf'
-      upload! h, "#{shared_path}/nginx.conf"
-      #as 'root'do
-      #  execute "rm /etc/nginx/sites-enabled/*"
-      #  execute :sudo, "ln -nfs #{shared_path}/nginx.conf /etc/nginx/sites-enabled/#{fetch(:application)}"
-      #end
-      execute! :sudo, "rm /etc/nginx/sites-enabled/*"
-      execute! :sudo, "ln -nfs #{shared_path}/nginx.conf /etc/nginx/sites-enabled/#{fetch(:application)}"
-      #invoke 'nginx:restart'
-    end
-  end
-  desc 'Build LetsEncrypt certs'
-  task :prepare_letsencrypt do
-    if fetch(:ssl_on)
-      on roles(:app) do
-        #invoke 'nginx:start'
-        invoke 'nginx:stop'
-        execute! :sudo,  "letsencrypt certonly --agree-tos --email=#{fetch(:ssl_email)} -d #{fetch(:app_domains).join(' -d ')}"
-        #invoke 'nginx:restart'
-      end
-    end
-  end
-
   before :starting,     :check_revision
   #after  :finishing,    :compile_assets
-  after  :finishing,    'nginx:restart'
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
 
-namespace :nginx do
-  %i(start stop restart).each do |verb|
-    task verb do
-      on roles(:app) do
-        execute! :sudo, :service, :nginx, verb
-      end
-    end
-  end
-end
-
-class SSHKit::Sudo::InteractionHandler
-  use_same_password!
-end
